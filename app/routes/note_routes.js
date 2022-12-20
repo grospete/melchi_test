@@ -9,14 +9,14 @@ module.exports = function(app, db) {
 
     app.post('/notes', (req, res) => {
         const note = {
-            bild: req.body.bild,
+            image: req.body.image,
             kategorie: req.body.kategorie,
             beschreibung: req.body.beschreibung,
             lat_coord: req.body.lat_coord,
             lng_coord: req.body.lng_coord,
             nachname: req.body.nachname,
             vorname: req.body.vorname,
-            mail: req.body.mail
+            email: req.body.email
         };
         db.collection('incidents').insertOne(note, (err, result) => {
             if (err) {
