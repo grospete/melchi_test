@@ -8,8 +8,6 @@ const client            = new MongoClient(db.url);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//client.connect(db.url, (err, database) => {  if (err) return console.log(err) });
-
 
 client.connect((err, database) => {
     if (err) {
