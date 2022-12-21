@@ -7,6 +7,11 @@ const db                = require('./config/db');
 const client            = new MongoClient(db.url);
 
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+    });
 
 
 client.connect((err, database) => {
