@@ -44,7 +44,7 @@ module.exports = function(app, db) {
             if (err) {
                 res.send({'error':'Incident was not found.'});
             } else {
-                res.send(result);
+                res.send(JSON.stringify(result));
             }
         });
     });
