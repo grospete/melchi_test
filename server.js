@@ -6,7 +6,7 @@ const port              = 8000;
 const db                = require('./config/db');
 const client            = new MongoClient(db.url);
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
 
 
 client.connect((err, database) => {
